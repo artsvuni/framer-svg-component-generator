@@ -46,6 +46,7 @@ function initialiseGenericIconComponent(
 }
 
 function generateSVGComponent(name: string, svgContent: string) {
+  svgContent.replace(/^fill="#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})"$/, 'fill="props.fill"');
   return `
 import * as React from 'react';
 import { addPropertyControls, ControlType } from 'framer';
